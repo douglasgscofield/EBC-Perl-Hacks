@@ -12,12 +12,12 @@ use Getopt::Std;
 #
 # e.g.   script -p 'prefix: ' -v file1.txt file2.txt
 
-our $opt_i = "";
+our $opt_p = "";
 our $opt_v = 0;
 
 print STDERR "Command-line arguments BEFORE getopts:: ", join(" , ", @ARGV), "\n";
 
-getopts("i:v") or die "something wrong with your arguments";
+getopts("p:v") or die "something wrong with your arguments";
 
 print STDERR "Command-line arguments AFTER getopts :: ", join(" , ", @ARGV), "\n";
 
