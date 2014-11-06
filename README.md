@@ -25,3 +25,7 @@ We covered an introduction to BioPerl, and along with it a light introduction to
 * [`convertAlignment.pl`](https://raw.githubusercontent.com/douglasgscofield/EBC-Perl-Hacks/master/2014-10-30_Intro-to-BioPerl/convertAlignment.pl) is a BioPerl script for converting between different alignment formats.  The alignment formats BioPerl understands (for the `-f` and `-of` options) are listed in the **Format** column of [this table](http://www.bioperl.org/wiki/HOWTO:AlignIO_and_SimpleAlign#AlignIO).  Note the caveat below the table, that only a subset of formats are available for output.
 
 You can see from the scripts that doing this sort of operation with BioPerl is super-simple.
+
+## 2014-11-06
+
+We covered handling command line arguments using `Getopt::Std` and `Getopt::Long`, and also used an example of 'here' documents.
