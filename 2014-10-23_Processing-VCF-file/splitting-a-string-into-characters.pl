@@ -12,5 +12,8 @@ print "method 2\n";
 @seq = split //, $a;
 print "$_\n" foreach @seq;
 print "method 3\n";
+@seq = unpack "(c)*", $a;
+print "$_\n" foreach @seq;
+# say the characters represent Sanger-encoded quality values, get those values with
 @seq = map { $_ - 33 } unpack "(c)*", $a;
 print "$_\n" foreach @seq;
