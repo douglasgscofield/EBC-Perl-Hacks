@@ -29,3 +29,13 @@ You can see from the scripts that doing this sort of operation with BioPerl is s
 ## 2014-11-06
 
 We covered handling command line arguments using `Getopt::Std` and `Getopt::Long`, and also used an example of 'here' documents.
+
+## 2014-11-20
+
+We started to introduce Perl references, focusing on references to data structures.  Our first topic was improving efficiency by passing large arguments to subroutines as references, and then we looked at how references are "hiding in plain site", for example the subhashes being references to anonymous hashes in a hash-of-hashes.  And we introduced the concept of "anonymous" (unnamed) data structures that are accessed only via reference.
+
+We also use the `Data::Dumper` module to examine Perl data structures, and showed how its output is different if we pass a reference to the data structure or the data structure itself.
+
+## 2014-11-27
+
+I don't know what we will cover.  Let's wait and see :-)
