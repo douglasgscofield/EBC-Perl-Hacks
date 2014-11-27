@@ -38,4 +38,12 @@ We also use the `Data::Dumper` module to examine Perl data structures, and showe
 
 ## 2014-11-27
 
-I don't know what we will cover.  Let's wait and see :-)
+We started by installing `Data::Dumper::Perltidy` using `cpan` and switching to
+its more compact format for printing data structures.  We continued by
+discussing scalar and list context in Perl.  This is a central concept in Perl
+and having an understanding of context is necessary for understanding some subtle
+and/or tricky things about the language.
+
+We then looked at references passed as arguments, and what scalar context means
+to a reference (`scalar($a)`), and to a reference cast to a list (`scalar(@$a)`).
+We used these features to write a simple subroutine comparing two lists.
