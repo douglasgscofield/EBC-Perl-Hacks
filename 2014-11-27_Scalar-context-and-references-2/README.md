@@ -17,7 +17,7 @@ print Dumper(\%j);
 
 produces
 
-```perl
+~~~~
 $VAR1 = {
           'b' => [
                    'a',
@@ -31,7 +31,7 @@ $VAR1 = {
                    3
                  ]
         };
-```
+~~~~
 
 From now on we will use the module `Data::Dumper::Perltidy`, which can be installed using `cpan`.
 
@@ -61,12 +61,12 @@ print Dumper(\%j);
 
 produces output that is more compact and easier to read:
 
-```perl
+~~~~
 $VAR1 = {
     'a' => [ 1,   2,   3 ],
     'b' => [ 'a', 'b', 'c', 'd' ]
 };
-```
+~~~~
 
 ### A brief review of scalar and list contexts...
 
@@ -88,10 +88,12 @@ Within strings, the context used is generally the "natural" one for the data typ
 my @s = @alph[0..3];
 print "The contents of \@s are '@s'\n";
 ```
+
 results in
-```perl
+
+~~~~
 The contents of @s are 'a b c d'
-```
+~~~~
 
 
 In R, values are readily promoted to vector or matrix (multidimensional vector) context.  A comparison of a scalar to a vector produces a vector of comparison results:
@@ -143,7 +145,7 @@ print "1b: list_compare_1() returns ".list_compare_1(['p', 'q', 'r'], [9, 8, 7])
 
 produces
 
-```perl
+~~~~
 $VAR1 = [ 1, 2, 3 ];
 $VAR1 = [ 'a', 'b', 'c' ];
 lists are different lengths
@@ -152,7 +154,7 @@ $VAR1 = [ 'p', 'q', 'r' ];
 $VAR1 = [ 9, 8, 7 ];
 lists are different lengths
 1b: list_compare_1() returns 0
-```
+~~~~
 
 So there is something here we don't understand.  Let's check the context of references
 more explicitly.
@@ -176,7 +178,7 @@ check_context(\@x, \@y);
 
 produces
 
-```perl
+~~~~
 reference $a in scalar context is 'ARRAY(0x7fa8d231b0f8)'
 reference $b in scalar context is 'ARRAY(0x7fa8d2304660)'
 reference $a in 'string' context is 'ARRAY(0x7fa8d231b0f8)'
@@ -187,7 +189,7 @@ reference $a cast to an array '@$a' in 'string' context is '1 2 3'
 reference $b cast to an array '@$b' in 'string' context is 'a b c'
 reference $a cast to an array '@$a' in scalar context is '3'
 reference $b cast to an array '@$b' in scalar context is '3'
-```
+~~~~
 
 Calling it with the anonymous arrays produces the same sort of output:
 
@@ -195,7 +197,7 @@ Calling it with the anonymous arrays produces the same sort of output:
 check_context(['p', 'q', 'r'], [9, 8, 7]);
 ```
 
-```perl
+~~~~
 reference $a in scalar context is 'ARRAY(0x7fa8d248a2b0)'
 reference $b in scalar context is 'ARRAY(0x7fa8d248a658)'
 reference $a in 'string' context is 'ARRAY(0x7fa8d248a2b0)'
@@ -206,7 +208,7 @@ reference $a cast to an array '@$a' in 'string' context is 'p q r'
 reference $b cast to an array '@$b' in 'string' context is '9 8 7'
 reference $a cast to an array '@$a' in scalar context is '3'
 reference $b cast to an array '@$b' in scalar context is '3'
-```
+~~~~
 
 Scalar context of a reference is an *address*: the actual location within
 your computer's memory of the data structure the reference is pointing to.  And
@@ -259,7 +261,7 @@ print "3d: for identical lists, list_compare_2() returns ".list_compare_2(\@y, \
 
 Running this gives us
 
-```perl
+~~~~
 references point to same location
 3a: for identical reference, list_compare_2() returns 1
 lists are different lengths
@@ -268,6 +270,6 @@ element 0 differs: a = '1' b = 'a'
 3c: for same length different lists, list_compare_2() returns 0
 lists are identical
 3d: for identical lists, list_compare_2() returns 1
-```
+~~~~
 
 which is what we were hoping for.
