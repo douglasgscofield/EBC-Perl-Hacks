@@ -121,18 +121,18 @@ We already know that passing two lists by value as arguments to a function gener
 my $verbose = 1;
 sub list_compare_1($$) {
     my ($a, $b) = @_;  # entire argument list is @_
-    print Dumper($a) if $verbose;  # note parent scope for $verbose
-    print Dumper($b) if $verbose;
+    print "lc1: ".Dumper($a) if $verbose;  # note parent scope for $verbose
+    print "lc1: ".Dumper($b) if $verbose;
     # The first comparison we should make is the lengths of the lists;
     # if their lengths are different their contents cannot be 
     # identical, and the subroutine might return its result quickly if 
     # we check for this case first.
     if ($a != $b) {
-        print "lists are different lengths\n" if $verbose;
+        print "lc1: lists are different lengths\n" if $verbose;
         return 0;
     }
     # Let's stop here and see how we are doing when just checking length.
-    print "lists are the same length\n" if $verbose;
+    print "lc1: lists are the same length\n" if $verbose;
     return 1;
 }
 my @x = 1..3;
@@ -146,13 +146,13 @@ print "1b: list_compare_1() returns ".list_compare_1(['p', 'q', 'r'], [9, 8, 7])
 produces
 
 ~~~~
-$VAR1 = [ 1, 2, 3 ];
-$VAR1 = [ 'a', 'b', 'c' ];
-lists are different lengths
+lc1: $VAR1 = [ 1, 2, 3 ];
+lc1: $VAR1 = [ 'a', 'b', 'c' ];
+lc1: lists are different lengths
 1a: list_compare_1() returns 0
-$VAR1 = [ 'p', 'q', 'r' ];
-$VAR1 = [ 9, 8, 7 ];
-lists are different lengths
+lc1: $VAR1 = [ 'p', 'q', 'r' ];
+lc1: $VAR1 = [ 9, 8, 7 ];
+lc1: lists are different lengths
 1b: list_compare_1() returns 0
 ~~~~
 
@@ -233,23 +233,23 @@ sub list_compare_2($$) {
     # to the same location; if so, they are 'aliases' for the same exact
     # data structure so are by definition identical
     if ($a == $b) {
-        print "references point to same location\n" if $verbose;
+        print "lc2: references point to same location\n" if $verbose;
         return 1;
     }
     # The second comparison we should make is the lengths of the lists.
     if (@$a != @$b) {  # the comparison forces each of @$a and @$b into scalar context
-        print "lists are different lengths\n" if $verbose;
+        print "lc2: lists are different lengths\n" if $verbose;
         return 0;
     }
     # Now compare each element in turn; if any differ, return immediately
     for my $i (0 .. (@$a - 1)) {  # length of list @$a - 1
         if ($a->[$i] ne $b->[$i]) {  # use 'ne' to force string comparison
-            print "element $i differs: a = '".$a->[$i]."' b = '".$b->[$i]."'\n" if $verbose;
+            print "lc2: element $i differs: a = '".$a->[$i]."' b = '".$b->[$i]."'\n" if $verbose;
             return 0;
         }
     }
     # if we get to the end of the loop, no elements differed
-    print "lists are identical\n" if $verbose;
+    print "lc2: lists are identical\n" if $verbose;
     return 1;
 }
 print "3a: for identical reference, list_compare_2() returns ".list_compare_2(\@x, \@x)."\n";
@@ -262,13 +262,13 @@ print "3d: for identical lists, list_compare_2() returns ".list_compare_2(\@y, \
 Running this gives us
 
 ~~~~
-references point to same location
+lc2: references point to same location
 3a: for identical reference, list_compare_2() returns 1
-lists are different lengths
+lc2: lists are different lengths
 3b: for different lengths, list_compare_2() returns 0
-element 0 differs: a = '1' b = 'a'
+lc2: element 0 differs: a = '1' b = 'a'
 3c: for same length different lists, list_compare_2() returns 0
-lists are identical
+lc2: lists are identical
 3d: for identical lists, list_compare_2() returns 1
 ~~~~
 
