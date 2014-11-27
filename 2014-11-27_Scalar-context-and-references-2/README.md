@@ -177,10 +177,10 @@ check_context(\@x, \@y);
 produces
 
 ```perl
-reference $a in scalar context is 'ARRAY(0x7f9419b1acf8)'
-reference $b in scalar context is 'ARRAY(0x7f9419b04260)'
-reference $a in 'string' context is 'ARRAY(0x7f9419b1acf8)'
-reference $b in 'string' context is 'ARRAY(0x7f9419b04260)'
+reference $a in scalar context is 'ARRAY(0x7fa8d231b0f8)'
+reference $b in scalar context is 'ARRAY(0x7fa8d2304660)'
+reference $a in 'string' context is 'ARRAY(0x7fa8d231b0f8)'
+reference $b in 'string' context is 'ARRAY(0x7fa8d2304660)'
 reference $a cast to an array '@{$a}' in 'string' context is '1 2 3'
 reference $b cast to an array '@{$b}' in 'string' context is 'a b c'
 reference $a cast to an array '@$a' in 'string' context is '1 2 3'
@@ -196,10 +196,10 @@ check_context(['p', 'q', 'r'], [9, 8, 7]);
 ```
 
 ```perl
-reference $a in scalar context is 'ARRAY(0x7f9419c89fa0)'
-reference $b in scalar context is 'ARRAY(0x7f9419c88878)'
-reference $a in 'string' context is 'ARRAY(0x7f9419c89fa0)'
-reference $b in 'string' context is 'ARRAY(0x7f9419c88878)'
+reference $a in scalar context is 'ARRAY(0x7fa8d248a2b0)'
+reference $b in scalar context is 'ARRAY(0x7fa8d248a658)'
+reference $a in 'string' context is 'ARRAY(0x7fa8d248a2b0)'
+reference $b in 'string' context is 'ARRAY(0x7fa8d248a658)'
 reference $a cast to an array '@{$a}' in 'string' context is 'p q r'
 reference $b cast to an array '@{$b}' in 'string' context is '9 8 7'
 reference $a cast to an array '@$a' in 'string' context is 'p q r'

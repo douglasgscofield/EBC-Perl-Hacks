@@ -79,12 +79,12 @@ sub check_context($$) {
     print "reference \$b in scalar context is '".scalar($b)."'\n";
     print "reference \$a in 'string' context is '$a'\n";
     print "reference \$b in 'string' context is '$b'\n";
-    print "reference \$a cast to an array '\@{\$a}' in 'string' context is '@$a'\n";
-    print "reference \$b cast to an array '\@{\$b}' in 'string' context is '@$b'\n";
-    print "reference \$a cast to an array '\@\$a' in 'string' context is '@{$a}'\n";
-    print "reference \$b cast to an array '\@\$b' in 'string' context is '@{$b}'\n";
-    print "reference \$a cast to an array '\@\$a' in scalar context is '".scalar(@{$a})."'\n";
-    print "reference \$b cast to an array '\@\$b' in scalar context is '".scalar(@{$b})."'\n";
+    print "reference \$a cast to an array '\@{\$a}' in 'string' context is '@{$a}'\n";
+    print "reference \$b cast to an array '\@{\$b}' in 'string' context is '@{$b}'\n";
+    print "reference \$a cast to an array '\@\$a' in 'string' context is '@$a'\n";
+    print "reference \$b cast to an array '\@\$b' in 'string' context is '@$b'\n";
+    print "reference \$a cast to an array '\@\$a' in scalar context is '".scalar(@$a)."'\n";
+    print "reference \$b cast to an array '\@\$b' in scalar context is '".scalar(@$b)."'\n";
 }
 # Named arrays passed by reference
 check_context(\@x, \@y);
