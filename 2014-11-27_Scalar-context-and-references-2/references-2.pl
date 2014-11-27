@@ -59,7 +59,7 @@ sub list_compare_1($$) {
         return 0;
     }
     # Let's stop here and see how we are doing when just checking length.
-    print "lists are different lengths\n" if $verbose;
+    print "lists are the same length\n" if $verbose;
     return 1;
 }
 my @x = 1..3;
