@@ -42,7 +42,7 @@ Repository for the Perl Hacks meeting group Thursdays 12.30-13.30 in the Evoluti
 * An example of 'here' documents
 
 
-## 2014-11-20
+## [2014-11-20](https://github.com/douglasgscofield/EBC-Perl-Hacks/blob/master/2014-11-20_Intro-to-references/references.pl)
 
 * Introduction to Perl references to data structures
 * It is much more efficient to pass a large data structure by reference than by value
@@ -52,7 +52,7 @@ Repository for the Perl Hacks meeting group Thursdays 12.30-13.30 in the Evoluti
 * How `Data::Dumper` output is different if we pass a reference to the data structure or the data structure itself
 
 
-## 2014-11-27
+## [2014-11-27](https://github.com/douglasgscofield/EBC-Perl-Hacks/tree/master/2014-11-27_Scalar-context-and-references-2)
 
 * Installing `Data::Dumper::Perltidy` using `cpan` and switching to its more compact format for printing data structures
 * Scalar and list context.  Having an understanding of context is necessary for understanding some subtle and/or tricky things about the language.
@@ -62,7 +62,7 @@ Repository for the Perl Hacks meeting group Thursdays 12.30-13.30 in the Evoluti
 * Writing a simple subroutine comparing two lists, with the lists passed as references
 
 
-## 2014-12-04
+## [2014-12-04](https://github.com/douglasgscofield/EBC-Perl-Hacks/tree/master/2014-12-04_Strange-characters)
 
 * Detecting strange ('control') characters in output using command-line tools, and how to `grep` for them
 * How to detect and manage strange characters in Perl
